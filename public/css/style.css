@@ -1,0 +1,51 @@
+* {
+	box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+}
+
+body {
+	background-color: #8ac9d1;
+	color: #000000;
+	font-family: Arial, sans-serif;
+	font-size: 16px;
+}
+
+.button {
+    border-radius: 12px;
+    background: #000000;
+    border:none;
+    color: #8ac9d1;
+    padding: 6px 12px;
+}
+
+div.mainBody {
+	background: #ffffff;
+	color: #000000;
+	border-radius: 12px;
+	margin: 30px auto 30px auto;
+	padding: 10px 10px 60px 10px;
+	width: 1300px;
+}
+
+div.pageTitle {
+	background: #212121;
+	border-radius: 12px;
+	max-width: 1024px;
+	margin: 30px auto 30px auto;
+	padding: 10px 10px 10px 20px;
+	width: 980px;
+}
+
+h1 {
+	/* for use inside div.pageTitle */
+	color: #8ac9d1;
+	margin: 10px auto 10px auto;
+	text-align: center;
+}
+
+input, textarea {
+    color: #000000;
+    font-size:16px;
+	width: 150px;
+}

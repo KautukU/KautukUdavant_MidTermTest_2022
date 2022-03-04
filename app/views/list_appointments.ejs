@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <title>
+        <%= title %>
+    </title>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div class="pageTitle">
+        <h1>List of Appointments</h1>
+    </div>
+
+    <div class="mainBody">
+        <table align="center">
+            <tr>
+                <td>
+                    <div>
+                        <label>Card Number:</label>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <label>Vaccine Site:</label>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <label>Priority Area:</label>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <label>Date Time:</label>
+                    </div>
+                </td>
+                <td>
+                    <div>
+                        <label>Is Cancelled:</label>
+                    </div>
+                </td>
+                <td>
+                    <label>Action:</label>
+                </td>
+                </tr>
+                <% appointments.forEach(function(appointment){ %>
+                    <form method="post" action="/edit_appointment">
+                        <tr>
+                            <td>
+                                <div>
+                                    <input type="text" name="cardNumber" value="<%= appointment.cardNumber %>" />
+                                    <input type="hidden" name="initialcardNumber" value="<%= appointment.cardNumber %>" />
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <input type="text" name="vaccineSite" value="<%= appointment.vaccineSite %>" /> 
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <input type="text" name="priorityArea" value="<%= appointment.priorityArea %>" /> 
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <input type="text" name="dateTime" value="<%= appointment.dateTime %>" /> 
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <input type="checkbox" name="cancelled" <%= appointment.cancelled ? "checked" : "" %>  /> 
+                                </div>
+                            </td>
+                            <td>
+                                <div>
+                                    <input class="button"type="submit" formaction="/list_appointments?_method=DELETE" value="Delete Appointment" />
+                                </div>
+                            </td>
+                        </tr>
+                    </form>
+                    <% })%>
+            </table>
+        <% if(typeof msg != 'undefined') { %> <h2><%= msg %></h2> <% } %>
+
+        <p>
+            <a href="/">&lt;&lt; Back to Index</a>
+        </p>
+    </div>
+</body>
+
+</html>

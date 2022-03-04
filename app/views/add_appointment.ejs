@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title><%=title %></title>
+    <link href="css/style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div class="pageTitle">
+        <h1>Add Appointment</h1>
+    </div>
+
+    <div class="mainBody">
+        <p>
+            Please fill out all the fields below.
+        </p>
+
+        <form action="/add_appointment" method="post">
+
+        <p>
+            <label>Card Number:</label>
+            <input type="text" name="cardNumber" required="required" />
+        </p>
+
+        <p>
+            <label>Vaccine Site:</label>
+            <input type="text" name="vaccineSite" required="required" />
+        </p>
+
+        <p>
+            <label>Priority Area:</label>
+            
+            <select class="form-control" id="priorityArea" name="priorityArea">
+                <option>Select Priority Group</option>
+                <option>80+</option>
+                <option>Healthcare</option>
+                <option>Essential</option>
+            </select>
+        </p>
+
+        <p>
+            <label>Date:</label>
+            <input type="date" name="dateTime" required="required" value="2022-03-03" min="2022-03-03" max="2022-06-30"/>
+        </p>
+        
+        <p>
+            <label>Cancelled:</label>
+            <input type="checkbox" name="cancelled" value="true"/>
+        </p>
+
+        <p>
+            <input class="button" type="submit" value="Save Appointment" />
+        </p>
+    
+    </form>
+</div>
+
+</body>
+
+</html>
